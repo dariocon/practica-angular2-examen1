@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <h2>➕ Añadir Usuario</h2>
+    <form >
+      
+      <!-- Login -->
+      <div class="mb-3">
+        <label for="user" class="form-label">Login</label>
+        <input type="text" id="user" class="form-control"  placeholder="Nombre de usuario">
+        <div class="text-danger">
+          El usuario debe tener al menos 3 caracteres.
+        </div>
+      </div>
+  
+      <!-- Contraseña -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" class="form-control" placeholder="Contraseña">
+        <div class="text-danger">
+          La contraseña debe tener al menos 6 caracteres.
+        </div>
+      </div>
+  
+      <!-- Rol -->
+      <div class="mb-3">
+        <label for="role" class="form-label">Rol</label>
+        <select id="role" class="form-select">
+          <option value="" disabled selected>Selecciona un rol</option>
+        </select>
+        <div class="text-danger">
+          Debes seleccionar un rol.
+        </div>
+      </div>
+  
+      <!-- Botón de Enviar -->
+      <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+    </form>
+  </div>
+  

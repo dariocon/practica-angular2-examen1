@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>Lista de Usuarios</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Rol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.user }}</td>
+          <td>
+            <select class="form-select" [(ngModel)]="user.rol" (change)="updateRol(user, user.rol)">
+              <option *ngFor="let rol of availablesRoles" [value]="rol">{{ rol }}</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

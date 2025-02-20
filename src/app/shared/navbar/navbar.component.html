@@ -1,0 +1,44 @@
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Tienda</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown">
+              Productos
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/products/list">Listado</a></li>
+              <li><a class="dropdown-item" routerLink="/products/add">Añadir</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown">
+              Usuarios
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/users/list">Listado</a></li>
+              <li><a class="dropdown-item" routerLink="/users/add">Añadir</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Botón Login/Logout alineado a la derecha -->
+         <!-- Solo aparecerá uno de los dos, según el usuario haya iniciado o no la sesión -->
+        <div class="ms-auto">
+          <button class="btn btn-outline-light">
+            🔐 Iniciar sesión
+          </button>
+          <button class="btn btn-outline-danger">
+            🚪 Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>

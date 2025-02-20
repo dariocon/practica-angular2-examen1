@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <!-- 🛍️ Listado de Productos -->
+    <h2>Listado de Productos</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Se mostrará una fila por cada producto con su precio y existencias -->
+            @for (product of products; track product.id) {
+            <tr>
+                <td>{{product.name}}</td>
+                <td>{{product.price}} €</td>
+                <td>{{product.stock}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm">Editar</button>
+                    <button class="btn btn-danger btn-sm">Eliminar</button>
+                    <button class="btn btn-success btn-sm">Vender</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
