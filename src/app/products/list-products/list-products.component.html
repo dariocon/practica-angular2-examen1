@@ -18,9 +18,13 @@
                 <td>{{product.price}} €</td>
                 <td>{{product.stock}}</td>
                 <td>
-                    <button class="btn btn-primary btn-sm">Editar</button>
-                    <button class="btn btn-danger btn-sm">Eliminar</button>
-                    <button class="btn btn-success btn-sm">Vender</button>
+                    @if (user && (user.rol=='admin' || user.rol=='manager')) {
+                        <button class="btn btn-primary btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Eliminar</button>
+                    }
+                    @if (user && (user.rol=='admin' || user.rol=='manager' || user.rol=='seller')) {
+                        <button class="btn btn-success btn-sm">Vender</button>
+                    }
                 </td>
             </tr>
             }

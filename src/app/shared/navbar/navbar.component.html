@@ -16,29 +16,43 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/products/list">Listado</a></li>
-              <li><a class="dropdown-item" routerLink="/products/add">Añadir</a></li>
+              @if (user && (user.rol=='admin' || user.rol=='manager')) {
+                <li><a class="dropdown-item" routerLink="/products/add">Añadir</a></li>
+              }
             </ul>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown">
-              Usuarios
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/users/list">Listado</a></li>
-              <li><a class="dropdown-item" routerLink="/users/add">Añadir</a></li>
-            </ul>
-          </li>
+          @if (user && (user.rol=='admin')) { 
+
+            <li class="nav-item dropdown">
+            
+              <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button" data-bs-toggle="dropdown">
+                Usuarios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/users/list">Listado</a></li>
+                <li><a class="dropdown-item" routerLink="/users/add">Añadir</a></li>
+              </ul>
+            </li>
+          }
+
+          
         </ul>
         <!-- Botón Login/Logout alineado a la derecha -->
          <!-- Solo aparecerá uno de los dos, según el usuario haya iniciado o no la sesión -->
         <div class="ms-auto">
-          <button class="btn btn-outline-light">
-            🔐 Iniciar sesión
-          </button>
-          <button class="btn btn-outline-danger">
-            🚪 Cerrar sesión
-          </button>
+          @if (user!=null) {
+            <button class="btn btn-outline-danger" (click)="logout()">
+              🚪 Cerrar sesión
+            </button>
+          }
+          @else {
+            <button class="btn btn-outline-light"  routerLink="/login">
+              🔐 Iniciar sesión
+            </button>
+
+          }
         </div>
       </div>
     </div>
   </nav>
+<router-outlet></router-outlet>

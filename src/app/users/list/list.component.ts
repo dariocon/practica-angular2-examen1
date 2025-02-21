@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 interface User {
   id: number;
@@ -10,7 +12,7 @@ interface User {
 
 @Component({
   selector: 'app-list',
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './list.component.html'
 })
 export class ListComponent implements OnInit{
