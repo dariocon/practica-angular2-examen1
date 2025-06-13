@@ -16,12 +16,12 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" routerLink="/products/list">Listado</a></li>
-              @if (user && (user.rol=='admin' || user.rol=='manager')) {
+              @if (this.user && (this.user.rol=='admin' || this.user.rol=='manager')) {
                 <li><a class="dropdown-item" routerLink="/products/add">Añadir</a></li>
               }
             </ul>
           </li>
-          @if (user && (user.rol=='admin')) { 
+          @if (this.user && (this.user.rol=='admin')) { 
 
             <li class="nav-item dropdown">
             
@@ -40,7 +40,7 @@
         <!-- Botón Login/Logout alineado a la derecha -->
          <!-- Solo aparecerá uno de los dos, según el usuario haya iniciado o no la sesión -->
         <div class="ms-auto">
-          @if (user!=null) {
+          @if (this.user && this.user.rol) {
             <button class="btn btn-outline-danger" (click)="logout()">
               🚪 Cerrar sesión
             </button>

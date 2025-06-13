@@ -32,7 +32,7 @@ export class LoginComponent {
 
       },
     });
-    this.authService.verifySession();
+    //this.authService.verifySession();
   }
 }
 

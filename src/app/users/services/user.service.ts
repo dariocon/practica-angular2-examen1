@@ -24,17 +24,8 @@ export class UserService {
 
           //Me he quedado pillado en el error de este método. 
          addUser(newUser: User): Observable<UserResponse> {
-           return this.http.post<UserResponse>(this.baseUrl, newUser, {withCredentials: true}).pipe(
-             tap((response) => {
-               const user = {
-                 //id: response.id,
-                 user: response.user,
-                 password: newUser.password,
-                 rol: newUser.rol
-               };
-               //this.CreateUserSubject.next(user);
-             })
-           );
+           return this.http.post<UserResponse>(this.baseUrl, newUser, {withCredentials: true});
+     
          } 
 
 
